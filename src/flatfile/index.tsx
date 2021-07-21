@@ -1,5 +1,6 @@
 import { FlatfileButton } from "@flatfile/react";
 
+
 const FlatFile = () => {
 
   return (
@@ -9,14 +10,34 @@ const FlatFile = () => {
       settings={{
         type: "Contact",
         fields: [
-          { label: "Email", key: "email" },
-          { label: "Phone", key: "phone" }
+          {
+            label: "Email", key: "email",
+            validators: [
+              {
+                validate: "regex_matches",
+                regex: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$",
+                error:
+                  "Invalid email address"
+              }
+            ]
+          },
+          {
+            label: "Phone", key: "phone",
+            validators: [
+              {
+                validate: "regex_matches",
+                regex: "^0(7(?:(?:[129][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$",
+                error:
+                  "Invalid phone number"
+              }
+            ]
+          }
         ],
         managed: true
       }}
       onData={async (results) => {
         // do something with the results
-        console.log(results)
+        console.log(results.data)
         return "Done!";
       }}
     >
