@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "module": "esnext",
+    "target": "es5",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "typeRoots": [
+      "./typings"
+    ],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "exclude": [
+    "dist",
+    "node_modules/**",
+    "webpack",
+    "jest"
+  ],
+  "include": [
+    "src"
+  ]
+}
